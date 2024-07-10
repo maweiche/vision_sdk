@@ -1,0 +1,84 @@
+{
+  "name": "vision_sdk",
+  "version": "1.0.0",
+  "description": "TypeScript SDK to interact with Vision Protocol on the Solana blockchain.",
+  "main": "index.js",
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "browser": {
+    "fs": false,
+    "net": false,
+    "tls": false
+  },
+  "dependencies": {
+    "@coral-xyz/anchor": "^0.29.0",
+    "@project-serum/anchor": "^0.26.0",
+    "@solana/spl-token": "^0.4.6",
+    "@solana/web3.js": "^1.75.0",
+    "axios": "^1.4.0",
+    "chai": "^5.1.1",
+    "crypto-js": "^4.1.1",
+    "decimal.js": "^10.4.3",
+    "mocha": "^10.1.0",
+    "ts-mocha": "^10.0.0",
+    "tweetnacl": "^1.0.3",
+    "typescript": "^4.9.5"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.3.4",
+    "@types/crypto-js": "^4.1.1",
+    "@types/jest": "^29.5.12",
+    "@types/mocha": "^9.1.1",
+    "@types/node": "^16.18.12",
+    "@types/react": "^18.0.27",
+    "tsup": "^6.6.3",
+    "typedoc": "^0.23.28"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
+  },
+  "scripts": {
+    "clean": "rimraf lib",
+    "build": "npm run clean && tsc && cp -r src/idl/*json lib/",
+    "build:docs": "typedoc",
+    "dev": "npm run clean && tsc && cp -r src/idl/*json lib/ && tsc -w",
+    "test": "ts-mocha -p tsconfig.json tests/**/*.spec.ts",
+    "test:admin": "ts-mocha -p tsconfig.json tests/admin.spec.ts",
+    "test:collection": "ts-mocha -p tsconfig.json tests/collection.spec.ts",
+    "test:userFlow": "ts-mocha -p tsconfig.json tests/userFlow.spec.ts",
+    "test:claimAirdrop": "ts-mocha -p tsconfig.json tests/claimAirdrop.spec.ts",
+    "test:sendAirdrop": "ts-mocha -p tsconfig.json tests/sendAirdrop.spec.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maweiche/vision_sdk.git"
+  },
+  "keywords": [
+    "Vision",
+    "Solana",
+    "Playground",
+    "NFT",
+    "Token2022",
+    "AI",
+    "Art"
+  ],
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
+  },
+  "author": "Matt Weichel",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/maweiche/vision_sdk/issues"
+  },
+  "homepage": "https://github.com/maweiche/vision_sdk#readme"
+}
