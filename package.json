@@ -1,8 +1,12 @@
 {
-  "name": "vision_sdk",
+  "name": "vision-solana-sdk",
   "version": "1.0.0",
   "description": "TypeScript SDK to interact with Vision Protocol on the Solana blockchain.",
-  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maweiche/vision_sdk.git",
+    "directory": "/src"
+  },
   "exports": {
     ".": {
       "types": "./lib/index.d.ts",
@@ -29,6 +33,7 @@
     "crypto-js": "^4.1.1",
     "decimal.js": "^10.4.3",
     "mocha": "^10.1.0",
+    "rimraf": "^6.0.1",
     "ts-mocha": "^10.0.0",
     "tweetnacl": "^1.0.3",
     "typescript": "^4.9.5"
@@ -58,25 +63,17 @@
     "test:claimAirdrop": "ts-mocha -p tsconfig.json tests/claimAirdrop.spec.ts",
     "test:sendAirdrop": "ts-mocha -p tsconfig.json tests/sendAirdrop.spec.ts"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/maweiche/vision_sdk.git"
-  },
   "keywords": [
-    "Vision",
-    "Solana",
-    "Playground",
-    "NFT",
-    "Token2022",
-    "AI",
-    "Art"
+    "solAi",
+    "react",
+    "sdk"
   ],
   "directories": {
     "lib": "lib",
     "test": "tests"
   },
   "author": "Matt Weichel",
-  "license": "GPL-3.0-or-later",
+  "types": "./lib/index.d.ts",
   "bugs": {
     "url": "https://github.com/maweiche/vision_sdk/issues"
   },
